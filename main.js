@@ -48,10 +48,15 @@ function unflipCards() {
         }, 1500);
             
 }
-
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
-} 
+}
+
+(function shuffle() {
+    cards.forEach(card => {
+        card.style.order = Math.floor(Math.random() * 12);
+    });
+})();
 
 cards.forEach(card => card.addEventListener('click', flipCard));

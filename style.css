@@ -15,6 +15,14 @@ body {
 
 h1 {
     color: #222;
+    font-size: 2rem;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .container {
@@ -26,8 +34,10 @@ h1 {
 }
 
 .memory-game {
-    width: 540px;
-    height: 540px;
+    width: 80vw;
+    max-width: 540px;
+    height: 80vw;
+    max-height: 540px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -42,13 +52,13 @@ h1 {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .memory-card:active {
     transform: scale(0.97);
-    transition: transform .2s;
+    transition: transform 0.2s;
 }
 
 .memory-card.flip {
@@ -71,20 +81,48 @@ h1 {
     transform: rotateY(180deg);
 }
 
-h1 {
-    position: absolute;
-    transform: translate(-475px, 35px);
-    margin-bottom: 20px;
-    color: #222;
-}
-
 #reset-button {
-    position: absolute;
-    transform: translate(400px, 35px);
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #4dabf7;
     border-radius: 5px;
     font-family: 'Sigmar One', cursive, sans-serif;
-    font-size: 18px;
+    font-size: 1.2rem;
     border: none;
+}
+
+@media (max-width: 1020px) {
+    body {
+       padding: 40px;
+
+    }
+    .memory-card {
+        width: calc(33.333% - 10px);
+        height: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .memory-card {
+        width: calc(33.333% - 10px);
+        height: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .memory-card {
+        width: calc(50% - 10px);
+        height: calc(25% - 10px);
+    }
+}
+
+@media (max-width: 420px) {
+     h1 {
+         font-size: 1.7rem;
+     }
+
+    .memory-card {
+        width: calc(50% - 5px);
+        height: calc(25% - 5px);
+        margin: 2.5px;
+    }
 }

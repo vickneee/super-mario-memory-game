@@ -98,13 +98,6 @@ h1 {
     cursor: pointer;
 }
 
-@media (max-width: 1020px) {
-    .memory-card {
-        width: calc(33.333% - 10px);
-        height: calc(33.333% - 10px);
-    }
-}
-
 @media (max-width: 768px) {
     .memory-card {
         width: calc(33.333% - 10px);
@@ -127,6 +120,6 @@ h1 {
     .memory-card {
         width: calc(50% - 5px);
         height: calc(25% - 5px);
-        margin: 2.5px;
+        margin: 2.5rem;
     }
 }

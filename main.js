@@ -96,3 +96,29 @@ function endGame() {
     // display message to user
     timer.innerHTML = `Congratulations, you completed the game in ${timeTaken} seconds!`;
 }
+
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener('click', resetGame);
+
+function resetGame() {
+    // Reset all card flips
+    cards.forEach(card => card.classList.remove('flip'));
+
+    // Reset the timer
+    clearInterval(intervalId);
+    seconds = 0;
+    timer.innerHTML = 'Time: 0 seconds';
+    firstFlipTime = null;
+    lastFlipTime = null;
+
+    // Reshuffle the cards
+    (function shuffle() {
+        cards.forEach(card => {
+            card.style.order = String(Math.floor(Math.random() * 12));
+        });
+    })();
+
+    // Re-enable click events on the cards
+    cards.forEach(card => card.addEventListener('click', flipCard));
+}
+

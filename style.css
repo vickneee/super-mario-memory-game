@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #8ce99a;
+    font-family: 'Sigmar One', cursive, sans-serif;
 }
 
 h1 {
@@ -22,11 +23,12 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .memory-game {
-    width: 640px;
-    height: 640px;
+    width: 540px;
+    height: 540px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -70,3 +72,20 @@ h1 {
     transform: rotateY(180deg);
 }
 
+h1 {
+    position: absolute;
+    transform: translateX(-475px);
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#reset-button {
+    position: absolute;
+    transform: translateX(400px);
+    padding: 10px 20px;
+    background-color: #4dabf7;
+    border-radius: 5px;
+    font-family: 'Sigmar One', cursive, sans-serif;
+    font-size: 18px;
+    border: none;
+}

@@ -94,7 +94,7 @@ function endGame() {
     const timeTaken = (lastFlipTime - firstFlipTime) / 1000;
 
     // display message to user
-    timer.innerHTML = `Congratulations, you completed the game in ${timeTaken} seconds!`;
+    timer.innerHTML = `You completed the game in ${timeTaken} seconds!`;
 }
 
 const resetButton = document.getElementById('reset-button');

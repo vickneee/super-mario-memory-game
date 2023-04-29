@@ -99,9 +99,12 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
     .memory-card {
-        width: calc(33.333% - 10px);
-        height: calc(33.333% - 10px);
+        width: calc(50% - 10px);
+        height: calc(25% - 10px);
     }
 }
 

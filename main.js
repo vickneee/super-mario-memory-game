@@ -71,7 +71,7 @@ function resetBoard() {
 
 (function shuffle() {
     cards.forEach(card => {
-        card.style.order = Math.floor(Math.random() * 12);
+        card.style.order = String(Math.floor(Math.random() * 12));
     });
 })();
 

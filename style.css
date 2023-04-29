@@ -54,6 +54,7 @@ h1 {
     transform-style: preserve-3d;
     transition: transform 0.5s;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .memory-card:active {
@@ -82,12 +83,19 @@ h1 {
 }
 
 #reset-button {
-    padding: 10px;
+    padding: 5px 10px;
     background-color: #4dabf7;
     border-radius: 5px;
     font-family: 'Sigmar One', cursive, sans-serif;
     font-size: 1.2rem;
     border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#reset-button:hover,
+#reset-button:active {
+    background-color: #5fb3f8;
+    cursor: pointer;
 }
 
 @media (max-width: 1020px) {

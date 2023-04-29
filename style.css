@@ -14,7 +14,6 @@ body {
 }
 
 h1 {
-    margin-bottom: 20px;
     color: #222;
 }
 
@@ -74,14 +73,14 @@ h1 {
 
 h1 {
     position: absolute;
-    transform: translateX(-475px);
+    transform: translate(-475px, 35px);
     margin-bottom: 20px;
     color: #222;
 }
 
 #reset-button {
     position: absolute;
-    transform: translateX(400px);
+    transform: translate(400px, 35px);
     padding: 10px 20px;
     background-color: #4dabf7;
     border-radius: 5px;

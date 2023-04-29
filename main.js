@@ -1,31 +1,47 @@
 const cards = document.querySelectorAll('.memory-card');
+const timer = document.getElementById('timer');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let seconds = 0;
+let firstFlipTime, lastFlipTime;
+let intervalId; // add this variable
 
 function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
-    
+
     this.classList.add('flip');
 
     if (!hasFlippedCard) {
         // first click
         hasFlippedCard = true;
         firstCard = this;
+
+        // start timer on first flip
+        if (!firstFlipTime) {
+            firstFlipTime = Date.now();
+            startTimer();
+        }
     } else {
         // second click
         hasFlippedCard = false;
         secondCard = this;
 
         checkForMatch();
+
+        // check if game is over
+        if (document.querySelectorAll('.memory-card.flip').length === cards.length) {
+            lastFlipTime = Date.now();
+            endGame();
+        }
     }
 }
 
+
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    
 
     isMatch ? disableCards() : unflipCards();
 }
@@ -33,10 +49,10 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    
+
     resetBoard();
-} 
-        
+}
+
 function unflipCards() {
     lockBoard = true;
 
@@ -45,9 +61,9 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-        }, 1500);
-            
+    }, 1500);
 }
+
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
@@ -60,3 +76,23 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+function startTimer() {
+    intervalId = setInterval(() => {
+        seconds++;
+        timer.innerHTML = `Time: ${seconds} seconds`;
+    }, 1000);
+}
+
+function endGame() {
+    clearInterval(intervalId);
+
+    // disable all cards
+    cards.forEach(card => card.removeEventListener('click', flipCard));
+
+    // calculate time taken to complete game
+    const timeTaken = (lastFlipTime - firstFlipTime) / 1000;
+
+    // display message to user
+    timer.innerHTML = `Congratulations, you completed the game in ${timeTaken} seconds!`;
+}

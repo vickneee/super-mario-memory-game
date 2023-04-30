@@ -35,7 +35,7 @@ h1 {
 
 .memory-game {
     width: 80vw;
-    max-width: 540px;
+    max-width: 940px;
     height: 80vw;
     max-height: 540px;
     margin: auto;
@@ -108,21 +108,32 @@ h1 {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 604px) {
+    body {
+        height: 100vh;
+    }
+
     .memory-card {
         width: calc(50% - 10px);
         height: calc(25% - 10px);
     }
+    h2 {
+        font-size: 1.2rem;
+    }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 404px) {
+
      h1 {
          font-size: 1.7rem;
      }
+    h2 {
+        font-size: 0.9rem;
+    }
 
     .memory-card {
-        width: calc(50% - 5px);
+        width: calc(25% - 5px);
         height: calc(25% - 5px);
-        margin: 2.5rem;
+        /*margin: 2.5rem;*/
     }
 }

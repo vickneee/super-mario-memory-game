@@ -103,8 +103,8 @@ h1 {
         height: 100vh;
     }
     .memory-card {
-        width: calc(50% - 10px);
-        height: calc(25% - 10px);
+        width: calc(33.333% - 10px);
+        height: calc(33.333% - 10px);
     }
 }
 
@@ -117,13 +117,13 @@ h1 {
         width: calc(50% - 10px);
         height: calc(25% - 10px);
     }
+
     h2 {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 404px) {
-
      h1 {
          font-size: 1.7rem;
      }
@@ -132,7 +132,7 @@ h1 {
     }
 
     .memory-card {
-        width: calc(25% - 5px);
-        height: calc(25% - 5px);
+        width: calc(50% - 10px);
+        height: calc(25% - 10px);
     }
 }

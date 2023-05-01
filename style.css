@@ -34,14 +34,14 @@ h1 {
 }
 
 .memory-game {
-    width: 80vw;
-    max-width: 940px;
-    height: 80vw;
-    max-height: 540px;
+    width: 50rem; /* 80vw = 50rem */
+    max-width: 100%; /* full width */
+    height: 50rem; /* 80vw = 50rem */
+    max-height: 75vh; /* 75% of viewport height */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    perspective: 1000px;
+    perspective: 62.5rem; /* 1000px = 62.5rem */
 }
 
 .memory-card {
@@ -99,40 +99,30 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    body {
-        height: 100vh;
-    }
     .memory-card {
-        width: calc(33.333% - 10px);
-        height: calc(33.333% - 10px);
+        width: calc(33.333% - 10px); /* change from max-width */
+        height: calc(25% - 10px); /* change from max-height */
     }
 }
 
 @media (max-width: 604px) {
-    body {
-        height: 100vh;
-    }
-
     .memory-card {
-        width: calc(50% - 10px);
-        height: calc(25% - 10px);
+        width: calc(50% - 10px); /* change from max-width */
+        height: calc(25% - 10px); /* change from max-height */
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }
 }
 
 @media (max-width: 404px) {
-     h1 {
-         font-size: 1.7rem;
-     }
-    h2 {
-        font-size: 0.9rem;
+    .memory-card {
+        width: calc(50% - 10px); /* change from max-width */
+        height: calc(25% - 10px); /* change from max-height */
     }
 
-    .memory-card {
-        width: calc(50% - 10px);
-        height: calc(25% - 10px);
+    h2 {
+        font-size: 1.0rem;
     }
 }

@@ -97,32 +97,3 @@ h1 {
     background-color: #5fb3f8;
     cursor: pointer;
 }
-
-@media (max-width: 768px) {
-    .memory-card {
-        width: calc(33.333% - 10px); /* change from max-width */
-        height: calc(25% - 10px); /* change from max-height */
-    }
-}
-
-@media (max-width: 604px) {
-    .memory-card {
-        width: calc(50% - 10px); /* change from max-width */
-        height: calc(25% - 10px); /* change from max-height */
-    }
-
-    h2 {
-        font-size: 1.0rem;
-    }
-}
-
-@media (max-width: 404px) {
-    .memory-card {
-        width: calc(50% - 10px); /* change from max-width */
-        height: calc(25% - 10px); /* change from max-height */
-    }
-
-    h2 {
-        font-size: 1.0rem;
-    }
-}

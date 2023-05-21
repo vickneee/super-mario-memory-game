@@ -1,2 +1,3 @@
 # super-mario-memory-game
-A simple Super Mario memory game with timer and reset button. 
+
+A simple Super Mario memory game with timer and reset button using HTML, CSS and JavaScript.

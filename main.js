@@ -1,3 +1,5 @@
+"use strict";
+
 const cards = document.querySelectorAll('.memory-card');
 const timer = document.getElementById('timer');
 
